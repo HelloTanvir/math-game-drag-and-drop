@@ -1,0 +1,11 @@
+.plateGrid {
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: #333030;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr;
+  justify-items: center;
+  grid-column-gap: 15px;
+  grid-row-gap: 30px;
+}

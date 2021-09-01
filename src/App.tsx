@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { DragDropContext, DropResult } from 'react-beautiful-dnd';
+import { useDispatch } from 'react-redux';
+import Container from './components/container/Container';
+import { rearrange, selectFirstNumber, selectSecondNumber } from './store/reducers/numberSlice';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const dispatch = useDispatch();
+
+    const handleOnDragEnd = (result: DropResult) => {
+        const { destination, source } = result;
+
+        if (
+            !destination ||
+            (destination.droppableId === source.droppableId && destination.index === source.index)
+        ) {
+            return;
+        }
+
+        if (destination.droppableId === 'numberPlate') {
+            dispatch(rearrange({ sourceIndex: source.index, destinationIndex: destination.index }));
+        } else if (destination.droppableId === 'numberContainer-1') {
+            dispatch(selectFirstNumber({ index: source.index }));
+        } else if (destination.droppableId === 'numberContainer-2') {
+            dispatch(selectSecondNumber({ index: source.index }));
+        }
+
+        if (source.droppableId === 'numberContainer-1') {
+            dispatch(selectFirstNumber({ index: undefined }));
+        } else if (source.droppableId === 'numberContainer-2') {
+            dispatch(selectSecondNumber({ index: undefined }));
+        }
+    };
+
+    return (
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+            <Container />
+        </DragDropContext>
+    );
+};
 
 export default App;

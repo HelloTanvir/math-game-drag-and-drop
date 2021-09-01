@@ -1,0 +1,16 @@
+.number {
+  width: 60px;
+  height: 60px;
+  background-color: #8383dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.number:hover {
+  background-color: #5e5eb6;
+  color: #fff;
+}

@@ -1,0 +1,37 @@
+.plate {
+  padding: 10px 40px;
+  background-color: #333030;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.quesContainer {
+  width: 54%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.numberContainer {
+  border: 1px solid #1f1d1d;
+  border-radius: 15px;
+  font-size: 20px;
+  background-color: #7a7575;
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.operator {
+  font-size: 20px;
+  color: #fff;
+}
+
+.equal {
+  font-size: 23px;
+  color: #fff;
+}

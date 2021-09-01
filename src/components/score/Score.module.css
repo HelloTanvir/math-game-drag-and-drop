@@ -1,0 +1,17 @@
+.score {
+  margin: 20px 0;
+  color: #fff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.point {
+  font-size: 17px;
+  border-radius: 15px;
+  background-color: #edfaee;
+  color: #000;
+  padding: 7px 10px;
+  margin-left: 15px;
+}
