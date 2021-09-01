@@ -12,7 +12,7 @@ yarn
 yarn start
 ```
 
-Here is a working live demo : [chat-app-mern-th.herokuapp](https://chat-app-mern-th.herokuapp.com/)
+Here is a working live demo : [math-game-dnd.netlify.app](https://math-game-dnd.netlify.app/)
 
 ### Desc :
 
